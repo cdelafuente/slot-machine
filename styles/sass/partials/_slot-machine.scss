@@ -1,0 +1,125 @@
+.slot-machine {
+  background: url('../../img/slot-machine.svg') no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  width: 100%;
+  height: 600px;
+  position: relative;
+
+  /* Display section that show messages */
+  .display {
+    background-color: $black;
+    position: absolute;
+    border-radius: 4px;
+    top: 134px;
+    left: 132px;
+    width: 337px;
+    height: 48px;
+
+    &__message {
+      display: inline-block;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: bold;
+      font-size: 1.1em;
+      color: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+
+  /* Reels section*/
+  .options {
+    position: absolute;
+    top: 262.5px;
+    left: 50%;
+    overflow: hidden;
+    width: 344px;
+    height: 204px;
+    border: 4px solid $black;
+    border-radius: 8px;
+    transform: translateX(-50%);
+
+    &:before,
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 204px;
+      position: absolute;
+      top: 0;
+      background-color: $black;
+    }
+
+    &:before {
+      left: 112px;
+    }
+
+    &:after {
+      left: 228px; 
+    }
+
+    /* Reel section */
+    .reel {
+      position: absolute;
+      top: 0;
+      margin: 0;
+      padding: 0 10px;
+      width: 92px;
+
+      &__item {
+        list-style-type: none;
+        height: 204px;
+        position: relative;
+
+        img {
+          display: inline-block;
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+        } 
+      }
+    }
+
+    .reel--left {
+      left: 0;
+    }
+
+    .reel--middle {
+      left: 116px;
+    }
+
+    .reel--right {
+      left: 232px;
+    }
+  }
+
+  /* Spin button */
+  .start-btn {
+    border-radius: 4px;
+    background-color: $black;
+    color: $white;
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    font-size: 1.375em;
+    padding: 15px 60px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      border: none;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}
